@@ -2,14 +2,14 @@
 
 
 
-作者：说出你的愿望吧丷
-链接：https://juejin.im/post/5e1505d0f265da5d5d744050
-来源：掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：说出你的愿望吧丷<br />
+链接：https://juejin.im/post/5e1505d0f265da5d5d744050<br />
+来源：掘金<br />
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br />
 
 ## 一、JVM基本介绍
 
-![img](https://user-gold-cdn.xitu.io/2020/1/9/16f8ab42da5a81cd?imageslim)
+![img](images/jvm知识汇总/16f8ab42da5a81cd)
 
 ### 1.1 **方法区** 
 
@@ -84,7 +84,7 @@ MaxMetaspaceSize：限制元空间大小上限，防止占用过多物理内存�
 
 而且当老年区执行了full gc之后仍然无法进行对象保存的操作，就会产生OOM，这时候就是虚拟机中的堆内存不足，原因可能会是堆内存设置的大小过小，这个可以通过参数-Xms、-Xms来调整。也可能是代码中创建的对象大且多，而且它们一直在被引用从而长时间垃圾收集无法收集它们。
 
-![img](https://user-gold-cdn.xitu.io/2020/1/14/16fa201c39ac86ad?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![img](images/jvm知识汇总/16fa201c39ac86ad)
 
 #### 2.3.6 如何判断一个对象需要被干掉
 
@@ -110,7 +110,7 @@ MaxMetaspaceSize：限制元空间大小上限，防止占用过多物理内存�
 
 不足的方面就是标记和清除的效率比较低下。且这种做法会让内存中的碎片非常多。这个导致了如果我们需要使用到较大的内存块时，无法分配到足够的连续内存。比如下图
 
-![img](https://user-gold-cdn.xitu.io/2020/1/15/16fa593b220bd65b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![img](images/jvm知识汇总/16fa593b220bd65b)
 
 此时可使用的内存块都是零零散散的，导致了刚刚提到的大内存对象问题
 
@@ -120,7 +120,7 @@ MaxMetaspaceSize：限制元空间大小上限，防止占用过多物理内存�
 
 这个算法的代价就是把内存缩水了，这样堆内存的使用效率就会变得十分低下了
 
-![img](https://user-gold-cdn.xitu.io/2020/1/15/16fa599ea6f4ce56?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![img](images/jvm知识汇总/16fa599ea6f4ce56)
 
 不过它们分配的时候也不是按照1:1这样进行分配的，就类似于Eden和Survivor也不是等价分配是一个道理。
 
@@ -128,7 +128,7 @@ MaxMetaspaceSize：限制元空间大小上限，防止占用过多物理内存�
 
 复制算法在对象存活率高的时候会有一定的效率问题，标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉边界以外的内存
 
-![img](https://user-gold-cdn.xitu.io/2020/1/15/16fa59da25a1629e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![img](images/jvm知识汇总/16fa59da25a1629e)
 
 #### 3.4.4 分代收集算法
 
@@ -138,7 +138,7 @@ MaxMetaspaceSize：限制元空间大小上限，防止占用过多物理内存�
 
 ## 四、各种各样的垃圾回收器
 
-![img](https://user-gold-cdn.xitu.io/2020/1/15/16fa60ac474394f7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![img](images/jvm知识汇总/16fa60ac474394f7)
 
 到jdk8为止，默认的垃圾收集器是Parallel Scavenge 和 Parallel Old
 
